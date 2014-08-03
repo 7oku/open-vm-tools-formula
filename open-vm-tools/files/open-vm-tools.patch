@@ -1,0 +1,12 @@
+--- open-vm-tools
++++ open-vm-tools Patch
+@@ -47,6 +47,9 @@
+ 		${0} stop
+ 		${0} start
+ 		;;
++	status)
++		status_of_proc /usr/bin/vmtoolsd open-vm-tools && exit 0 || exit $?
++		;;
+ 	*)
+ 		log_success_msg "Usage: ${0} {start|stop|restart|force-reload}"
+ 		exit 1
