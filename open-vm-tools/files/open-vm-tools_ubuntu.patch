@@ -1,0 +1,13 @@
+--- open-vm-tools	2014-03-11 16:34:49.000000000 +0100
++++ open-vm-tools.new	2014-08-04 09:58:58.429163593 +0200
+@@ -48,6 +48,10 @@
+ 		${0} start
+ 		;;
+ 
++        status)
++                status_of_proc /usr/bin/vmtoolsd open-vm-tools && exit 0 || exit $?
++                ;;
++
+ 	*)
+ 		log_success_msg "Usage: ${0} {start|stop|restart|force-reload}"
+ 		exit 1

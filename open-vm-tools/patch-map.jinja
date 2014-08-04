@@ -1,12 +1,9 @@
 {% set patch_table = {
-    'Debian': {
-      'required': True,
-      'hash': 'md5:eecce6608cc6edca91127116d0690775'
-    },
     'Ubuntu': {
       'required': True,
-      'hash': 'md5:eecce6608cc6edca91127116d0690775'
-    },
+      'patchfile': 'open-vm-tools_ubuntu.patch',
+      'hash': 'md5:099045c80c38636ae277d43b604d3e69'
+    }
 } %}
 
 {% if grains['os'] in patch_table %}
